@@ -1,4 +1,6 @@
 site_name: "{{schema.description}}"
 theme: readthedocs
 nav:
-  - Home: index.md
+  - Home: home.md
+  - Index: index.md
+  - Credits: credits.md
