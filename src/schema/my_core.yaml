@@ -1,13 +1,13 @@
-id: https://w3id.org/my_schema
-name: My-Schema
+id: https://w3id.org/my_core
+name: my_core
 description: >-
-  My Schema Description
+  This is an example of an imported module
 imports:
 - biolinkml:types
 prefixes:
   biolinkml: https://w3id.org/biolink/biolinkml/
-  my_schema: https://w3id.org/mixs/my_schema/
-default_prefix: my_schema
+  my_core: https://w3id.org/mixs/my_core/
+default_prefix: my_core
 
 slots:
   id:
@@ -15,6 +15,8 @@ slots:
     required: true
 classes:
   named thing:
+    description: >-
+      root class
     slots:
       - id
 
