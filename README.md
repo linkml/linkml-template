@@ -57,7 +57,7 @@ pip install -r requirements.txt
 You can make specific targets, e.g
 
 ```bash
-make deploy-jsonschema
+make stage-jsonschema
 ```
 
 Use the `all` target to make everything
@@ -70,7 +70,27 @@ make gh-deploy
 
 That's it!
 
-The Makefile takes care of dependencies. Downstream files are only rebuilt if source files change
+The Makefile takes care of dependencies. Downstream files are only rebuilt if source files change.
+
+## Documentation framework
+
+You can change the theme by editing [mkdocs.yml](mkdocs.yml)
+
+Do not edit docs in place. They are placed in the `docs` dir by `make stage-docs`.
+
+You can add your own docs to `src/docs/
+
+Note that docs are actually deployed on the gh-pages branch, but you don't need to worry about this. Just type:
+
+```bash
+make gh-deploy
+```
+
+The template site is deployed on
+
+http://cmungall.github.io/linkml-template
+
+But this is not very interesting as it is a toy schema
 
 ## TODO
 

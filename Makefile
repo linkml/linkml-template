@@ -10,7 +10,7 @@ TGTS = graphql jsonschema docs shex owl csv graphql python
 #GEN_OPTS = --no-mergeimports
 GEN_OPTS = 
 
-all: gen deploy
+all: gen stage
 gen: $(patsubst %,gen-%,$(TGTS))
 clean:
 	rm -rf target/
@@ -33,19 +33,21 @@ tdir-%:
 docs:
 	mkdir $@
 
-deploy: $(patsubst %,deploy-%,$(TGTS))
-deploy-%: gen-%
+stage: $(patsubst %,stage-%,$(TGTS))
+stage-%: gen-%
 	cp -pr target/$* .
 
 
 ###  -- MARKDOWN DOCS --
 # Generate documentation ready for mkdocs
 # TODO: modularize imports
-gen-docs: target/docs/index.md
+gen-docs: target/docs/index.md copy-src-docs
 .PHONY: gen-docs
+copy-src-docs:
+	cp $(SRC_DIR)/docs/*md target/docs/
 target/docs/%.md: $(SCHEMA_SRC) tdir-docs
 	gen-markdown $(GEN_OPTS) --dir target/docs $<
-deploy-docs: gen-docs
+stage-docs: gen-docs
 	cp -pr target/docs .
 
 ###  -- MARKDOWN DOCS --
@@ -99,6 +101,7 @@ gen-linkml: target/linkml/$(SCHEMA_NAME).yaml
 target/linkml/%.yaml: $(SCHEMA_DIR)/%.yaml tdir-limkml
 	cp $< > $@
 
+# test docs locally.
 docserve:
 	mkdocs serve
 
