@@ -15,6 +15,7 @@ gen: $(patsubst %,gen-%,$(TGTS))
 clean:
 	rm -rf target/
 	rm -rf docs/
+	mkdir target/
 
 t:
 	echo $(SCHEMA_NAMES)
