@@ -6,7 +6,7 @@ imports:
 - biolinkml:types
 prefixes:
   biolinkml: https://w3id.org/biolink/biolinkml/
-  my_core: https://w3id.org/mixs/my_core/
+  my_core: https://w3id.org/my_schema/my_core/
 default_prefix: my_core
 
 slots:
