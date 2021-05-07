@@ -3,10 +3,10 @@ name: my_schema
 description: >-
   My Schema Description
 imports:
- - biolinkml:types
+ - linkml:types
  - my_core
 prefixes:
-  biolinkml: https://w3id.org/biolink/biolinkml/
+  linkml: https://w3id.org/linkml/
   my_schema: https://w3id.org/mixs/my_schema/
 default_prefix: my_schema
 

@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This is a GitHub template for a [LinkML](https://github.com/biolink/biolinkml/) project.
+This is a GitHub template for a [LinkML](https://github.com/linkml/linkml/) project.
 
 It allows you to create a project for your schema as quickly as
 possible. It takes care of generating a beautiful readthedocs themed
@@ -41,7 +41,7 @@ Everything is orchestrated by a generic single [Makefile](Makefile). For this to
  * Use the `.yaml` suffix for all schema files
  * Use the suggested directory layout here.
 
-To run the Makefile you will need Python (>=3.7), and biolinkml. You can type:
+To run the Makefile you will need Python (>=3.7), and linkml. You can type:
 
 ```bash
 make install
