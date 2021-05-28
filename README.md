@@ -1,3 +1,5 @@
+DEPRECATED: Use https://github.com/linkml/linkml-model-template instead
+
 # Template for LinkML schema repos
 
 ## What is this?
